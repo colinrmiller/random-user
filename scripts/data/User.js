@@ -9,7 +9,7 @@ export const getUser = () => {
             return response.json();
         })
         .then((parsedResponse) => {
-            console.log(parsedResponse);
+            // console.log(parsedResponse);
             return parsedResponse;
         });
 };
@@ -20,9 +20,9 @@ export const displayRandomUser = () => {
     getUser().then((parsedResponse) => {
         const displayElement = document.getElementById("display-user");
         const userData = parsedResponse.results[0];
-        console.log("info", userData);
+        // console.log("info", userData);
         userPicture = userData.picture.large;
-        userName = `${userData.name.title} ${userData.name.first} ${userData.name.last}`;
+        userName = `${userData.name.title}. ${userData.name.first} ${userData.name.last}`;
         userLocation = `${userData.location.city}, ${userData.location.state}. ${userData.location.country}`;
         userBirthday = `Born: ${readDate(userData.dob.date)} Age:${
             userData.dob.age
